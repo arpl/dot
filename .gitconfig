@@ -1,0 +1,19 @@
+# This is Git's per-user configuration file.
+[user]
+name = Aris Plakias
+email = aris.plakias@gmail.com
+[alias]
+st  = status -sb
+co  = checkout
+lb = log --graph --abbrev-commit
+lc  = lb --oneline --date=relative --decorate --date=relative
+lca = lb --abbrev-commit --date=relative --decorate
+lf  = lc --name-status
+la  = lc --branches
+df  = diff -w
+dc  = diff -w --cached
+lo  = ls-files --others
+loe = lo --exclude-standard
+xx = "!f() { git d${1} . $(for arg in ${*:2}; do echo \":(exclude)${arg}\"; done;); }; f"
+xdf = !git xx f
+xdc = !git xx c
